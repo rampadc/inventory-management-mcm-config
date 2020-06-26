@@ -96,3 +96,15 @@ spec:
     placementRef:
       name: inventory-management-svc-rule
       kind: PlacementRule
+---
+apiVersion: app.ibm.com/v1alpha1
+kind: Channel
+metadata:
+  name: helm-repo-artifactory
+  namespace: 
+spec:
+  configMap:
+    insecureSkipVerify: true
+  pathname: >-
+    https://artifactory-tools.rhos4cpdv3anz-syd01-b3c-49940c4bdca5e22e4c30fc45d6b9da1b-0000.au-syd.containers.appdomain.cloud/artifactory/generic-local/testdrive
+  type: HelmRepo
