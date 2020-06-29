@@ -13,7 +13,7 @@ spec:
       pipelineRef:
         name: #PIPELINE_NAME
       resources:
-      - name: git-source
+      - name: mcm-config-source
         resourceSpec:
           type: git
           params:
