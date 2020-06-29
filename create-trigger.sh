@@ -27,7 +27,7 @@ fi
 
 # input validation
 if [ -z "${GIT_REPO_LINK}" ]; then
-    echo "Please provide your GIT_REPO_LINK as fourth paramter"
+    echo "Please provide your GIT_REPO_LINK as second paramter"
     exit
 fi
 
