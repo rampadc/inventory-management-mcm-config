@@ -33,7 +33,7 @@ fi
 
 # Apply the yaml to cluster
 cat trigger-binding.yaml | sed "s/#APP_NAME/${APP_NAME}/g" | kubectl apply -f -
-cat trigger-template.yaml | sed "s/#APP_NAME/${APP_NAME}/g" | sed "s@#PIPELINE_NAME@${PIPELINE_NAME}@g"| sed "s@#GIT_REPO_LINK@${GIT_REPO_LINK}@g"| kubectl apply -f -
+cat trigger-template.yaml | sed "s/#APP_NAME/${APP_NAME}/g" | sed "s@#GIT_REPO_LINK@${GIT_REPO_LINK}@g"| kubectl apply -f -
 cat trigger-event-listener.yaml | sed "s/#APP_NAME/${APP_NAME}/g" | kubectl apply -f -
 
 echo "Tekton triggers registered."
