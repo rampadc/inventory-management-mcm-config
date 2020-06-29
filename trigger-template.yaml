@@ -1,0 +1,21 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: #APP_NAME
+spec:  
+  resourcetemplates:
+  - apiVersion: tekton.dev/v1beta1
+    kind: PipelineRun
+    metadata:
+      generateName: #PIPELINE_NAME-
+    spec:
+      serviceAccountName: pipeline
+      pipelineRef:
+        name: #PIPELINE_NAME
+      resources:
+      - name: git-source
+        resourceSpec:
+          type: git
+          params:
+          - name: url
+            value: #GIT_REPO_LINK
