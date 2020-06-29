@@ -7,11 +7,11 @@ spec:
   - apiVersion: tekton.dev/v1beta1
     kind: PipelineRun
     metadata:
-      generateName: #PIPELINE_NAME-
+      generateName: deploy-to-mcm-
     spec:
       serviceAccountName: pipeline
       pipelineRef:
-        name: #PIPELINE_NAME
+        name: deploy-to-mcm
       resources:
       - name: mcm-config-source
         resourceSpec:
