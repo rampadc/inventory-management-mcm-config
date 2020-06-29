@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: deploy-to-mcm
+spec:
+  resources:
+    - name: mcm-config-source
+      type: git
+  tasks:
+    - name: deploy-to-mcm
+      params:
+        - name: SCRIPT
+          value: |
+            oc apply -f source/mcm-config.yaml
+      resources:
+        inputs:
+          - name: source
+            resource: mcm-config-source
+      taskRef:
+        kind: ClusterTask
+        name: openshift-client
