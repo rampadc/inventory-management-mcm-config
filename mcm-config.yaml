@@ -91,7 +91,7 @@ spec:
   name: inventory-svc
   channel: test-inventory-svc/helm-repo-artifactory
   packageFilter:
-    version: 0.0.1
+    version: 0.0.2
   placement:
     placementRef:
       name: inventory-management-svc-rule
